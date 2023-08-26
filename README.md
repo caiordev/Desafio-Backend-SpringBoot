@@ -74,12 +74,16 @@ O Swagger poderá ser visualizado em [localhost:8080/swagger-ui.html](http://loc
 
 ## API Endpoints
 
-Para fazer as requisições HTTP abaixo, foi utilizada a ferramenta [httpie](https://httpie.io):
+Para fazer as requisições HTTP abaixo, foi utilizada a ferramenta [Insomnia]():
 
 - POST /places
 
 ```
-http POST :8080/places name="Place" state="State"
+http POST :8080/places
+{
+    "name"="Place",
+    "state"="State"
+}
 
 HTTP/1.1 200 OK
 Content-Length: 129
@@ -133,7 +137,11 @@ transfer-encoding: chunked
 - PATCH /places/{id}
 
 ```
-http PATCH :8080/places/1 name='New Name' state='New State'
+http PATCH :8080/places/1
+{
+    "name"="New Name",
+     "state"="New State"
+}
 HTTP/1.1 200 OK
 Content-Length: 142
 Content-Type: application/json
